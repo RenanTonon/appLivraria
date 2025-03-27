@@ -3,9 +3,11 @@ package com.example.demo.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "livraria")
 public class Livraria {
 
+    public Livraria(){
+
+    }
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long id;
@@ -13,27 +15,25 @@ public class Livraria {
     @Column
     private String name;
 
-
-
-    public Livraria(){
-
-    }
-
+    @Column
     private String author;
 
     public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+        return this.name;
     }
 
     public String getAuthor() {
-        return author;
+        return this.author;
     }
 
-    public void setAuthor(String author) {
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public void setId(Long id){
+        this.id = id;
+    }
+    public void setAuthor(String author){
         this.author = author;
     }
 }
